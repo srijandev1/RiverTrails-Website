@@ -1,0 +1,72 @@
+import React from 'react'
+import { p1, p2, p3, p4, p5 } from "../../assets";
+import PackageCard from "../../Components/PackageCard/PackageCard";
+
+function Packages() {
+  return (
+    <div className='px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem]'>
+       <p className='text-[#005EE6] text-[0.85rem] md:text-[1rem] text-center font-medium'>PACKAGES</p>
+        <h1 className="font-bold text-[1.6rem] md:text-[2.5rem] leading-[2rem] md:leading-[2.5rem] text-center text-[#3C3C3C] mb-8">
+        Our fishing packages
+      </h1>
+      <section className='flex flex-wrap items-center gap-[1.75rem] md:gap-[2.6rem] mb-[5rem]'>
+      <PackageCard
+            img={p1}
+            title="Time-Crunched Angler "
+            rating="4.5"
+            reviews="12"
+            day="9"
+            night="8"
+            price="$3,200"
+          />
+          <PackageCard
+            img={p2}
+            title="Easy Going Angler "
+            rating="4.8"
+            reviews="52"
+            day="11"
+            night="10"
+            price="$2,000"
+          />
+          <PackageCard
+            img={p3}
+            title="Exploring Angler "
+            rating="4.5"
+            reviews="12"
+            day="11"
+            night="13"
+            price="$3,200"
+          />
+          <PackageCard
+            img={p4}
+            title="Time-Crunched Angler"
+            rating="4.5"
+            reviews="12"
+            day="11"
+            night="13"
+            price="$3,200"
+          />
+          <PackageCard
+            img={p5}
+            title="Time-Crunched Angler"
+            rating="4.5"
+            reviews="12"
+            day="11"
+            night="13"
+            price="$3,200"
+          />
+          <PackageCard
+            img={p3}
+            title="Time-Crunched Angler"
+            rating="4.5"
+            reviews="12"
+            day="11"
+            night="13"
+            price="$3,200"
+          />
+      </section>
+    </div>
+  )
+}
+
+export default Packages
