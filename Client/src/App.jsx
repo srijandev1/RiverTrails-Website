@@ -7,7 +7,8 @@ import About from "./Pages/About/About"
 import Packages from "./Pages/Packages/Packages"
 import FAQs from "./Pages/FAQs/FAQs"
 import Itinerary from "./Pages/Itinerary/Itinerary"
-import GallerySlider from "./Components/GallerySlider/GallerySlider";
+
+
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     {/* <FAQs/> */}
     <Itinerary/>
     <Footer/>
+    
     </>
   );
 }

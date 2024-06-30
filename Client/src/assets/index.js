@@ -32,6 +32,9 @@ import golden from "./golden.png";
 import local from "./local.png";
 import safari from "./safari.png";
 import taj from "./taj.png"
+import p1a from './p1a.jpeg'
+import p1b from './p1b.jpeg'
+import p1c from './p1c.jpeg'
 
 export {
   logoB,
@@ -67,5 +70,8 @@ export {
   golden,
   local,
   safari,
-  taj
+  taj,
+  p1a,
+  p1b,
+  p1c,
 };

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaQ } from "react-icons/fa6";
+
 
 function FAQsMenu(props) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +14,8 @@ function FAQsMenu(props) {
         onClick={() => setMenuOpen(!menuOpen)}
         className="flex justify-between items-center w-full"
       >
-        <span className="py-4 text-left text-[0.9rem] md:text-[1rem]">{props.q}</span>
+        <span className="py-4 text-left flex gap-3 items-center text-[0.9rem] md:text-[1rem]"><FaQ size={20} color="#005EE6"/>
+        {props.q}</span>
         {menuOpen ? <span>-</span> : <span>+</span>}
       </button>
       <div className={`grid overflow-hidden transition-all duration-300 ease-in-out font-extralight  ${menuOpen ? 'py-4 grid-rows-[1fr] opacity-100 border-t-[0.5px] border-[#ffffff4a]':'grid-rows-[0fr] opacity-0'}`}>

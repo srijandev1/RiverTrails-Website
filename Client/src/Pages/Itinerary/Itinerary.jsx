@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { star, p3, tick } from "../../assets/index";
 import ItineraryMenu from "../../Components/ItineraryMenu/ItineraryMenu";
 import { itinerary, addOns } from "./constant";
@@ -7,10 +7,14 @@ import CheckAvailCard from "../../Components/CheckAvailCard/CheckAvailCard";
 import GallerySlider from "../../Components/GallerySlider/GallerySlider";
 
 function Itinerary() {
+  const [showPop, setShowPop] = useState(false);
+  const handlePopup = () => {
+    setShowPop(!showPop);
+  }
   return (
-    <div className="flex px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem] justify-between">
+    <div className="flex px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem] justify-between mb-[4rem] md:mb-[8rem]">
       <section className="md:w-[63%]">
-        <div className="text-[#696969] text-[0.75rem] md:text-[1rem] font-extralight mb-1 md:mb-5">
+        <div className="text-[#696969] text-[0.75rem] md:text-[1rem] font-extralight ">
           <a href="">Home</a> {" > "} <a href="">Packages</a> {" > "}{" "}
           <a href="">Time-crunched Angler</a>
         </div>
@@ -79,7 +83,7 @@ function Itinerary() {
             );
           })}
         </div>
-        <div className="mt-[4rem] mb-[8rem]" id="addons">
+        <div className="mt-[4rem]">
           <h3 className="font-semibold text-[1.2rem] md:text-[1.3rem] mb-8">
             Optional Add-Ons to Enhance Your Experience
           </h3>
@@ -90,7 +94,7 @@ function Itinerary() {
           </div>
         </div>
       </section>
-      <section className="hidden md:block">
+      <section className= {!showPop ? "hidden md:block" : "block md:block"}>
         <CheckAvailCard
           title="Time-Crunched Angler "
           rating="4.5"
@@ -100,8 +104,21 @@ function Itinerary() {
           price="$3,200"
           oldprice="$4,800"
           discount="30"
+          onClose={handlePopup}
         />
       </section>
+      <div className="md:hidden bg-white shadow-md w-[100vw] fixed bottom-0 left-0 px-4 py-4">
+      <div className="flex justify-between">
+        <p>
+          <span className="text-[#696969] text-[0.85rem]">$ 302.21</span>
+          <p className="font-medium leading-[1.75rem] text-[1.5rem]">$ 205.3 <span className="text-[#696969] font-light text-[0.85rem]">per person</span></p>
+        </p>
+       
+        <p onClick={handlePopup} className="px-10 py-3 text-[1.2rem] bg-[#005EE6] text-white rounded-[10px] flex items-center justify-center ">
+          Reserve
+        </p>
+      </div>
+      </div>
     </div>
   );
 }

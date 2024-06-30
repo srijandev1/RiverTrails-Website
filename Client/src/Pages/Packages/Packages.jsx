@@ -1,16 +1,19 @@
-import React from 'react'
+import React from "react";
 import { p1, p2, p3, p4, p5 } from "../../assets";
 import PackageCard from "../../Components/PackageCard/PackageCard";
 
 function Packages() {
   return (
-    <div className='px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem]'>
-       <p className='text-[#005EE6] text-[0.85rem] md:text-[1rem] text-center font-medium'>PACKAGES</p>
-        <h1 className="font-bold text-[1.6rem] md:text-[2.5rem] leading-[2rem] md:leading-[2.5rem] text-center text-[#3C3C3C] mb-8">
+    <div className=" px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem]">
+      <p className="text-[#005EE6] text-[0.85rem] md:text-[1rem] text-center font-medium">
+        PACKAGES
+      </p>
+      <h1 className="font-bold text-[1.6rem] md:text-[2.5rem] leading-[2rem] md:leading-[2.5rem] text-center text-[#3C3C3C] mb-8">
         Our fishing packages
       </h1>
-      <section className='flex flex-wrap items-center gap-[1.75rem] md:gap-[2.6rem] mb-[5rem]'>
-      <PackageCard
+      <div className="flex justify-center items-center">
+        <section className="flex flex-wrap justify-center items-center gap-[1.75rem] md:gap-[3rem] mb-[5rem]">
+          <PackageCard
             img={p1}
             title="Time-Crunched Angler "
             rating="4.5"
@@ -64,9 +67,10 @@ function Packages() {
             night="13"
             price="$3,200"
           />
-      </section>
+        </section>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Packages
+export default Packages;
