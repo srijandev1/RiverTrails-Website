@@ -269,42 +269,51 @@ function Home() {
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-0 md:justify-between">
-          <PackageCard
-            img={p1a}
-            title="Time-Crunched Angler "
-            rating="4.5"
-            reviews="12"
-            day="9"
-            night="8"
-            price="$3,200"
-          />
-          <PackageCard
-            img={p1b}
-            title="Easy Going Angler "
-            rating="4.8"
-            reviews="52"
-            day="11"
-            night="10"
-            price="$2,000"
-          />
-          <PackageCard
-            img={p1c}
-            title="Exploring Angler "
-            rating="4.5"
-            reviews="12"
-            day="11"
-            night="13"
-            price="$3,200"
-          />
-          <PackageCard
-            img={p3}
-            title="Time-Crunched Angler"
-            rating="4.5"
-            reviews="12"
-            day="11"
-            night="13"
-            price="$3,200"
-          />
+          <Link to='/package/p1'>
+            <PackageCard
+              img={p1}
+              title="Time-Crunched Angler "
+              rating="4.5"
+              reviews="12"
+              day="9"
+              night="8"
+              price="$3,200"
+            />
+          </Link>
+          <Link to='/package/p2'>
+            <PackageCard
+              img={p2}
+              title="Easy Going Angler "
+              rating="4.8"
+              reviews="52"
+              day="11"
+              night="10"
+              price="$2,000"
+            />
+          </Link>
+
+          <Link to='/package/p3'>
+            <PackageCard
+              img={p3}
+              title="Exploring Angler "
+              rating="4.5"
+              reviews="12"
+              day="14"
+              night="13"
+              price="$3,200"
+            />
+          </Link>
+          <Link to='/package/p1'>
+            <PackageCard
+              img={p4}
+              title="Time-Crunched Angler"
+              rating="4.5"
+              reviews="12"
+              day="11"
+              night="13"
+              price="$3,200"
+            />
+          </Link>
         </div>
       </section>
       {/* Gallery */}
@@ -377,7 +386,7 @@ function Home() {
             Our Angler’s kind words
           </h2>
         </div> */}
-        {/* <Slider {...settings}>
+      {/* <Slider {...settings}>
            
             {ReviewData.map((data) => {
               return <div className=""><ReviewCard name={data.name} review={data.msg}/></div> 
@@ -385,7 +394,7 @@ function Home() {
           
         
             </Slider> */}
-        {/* <div className="flex items-center justify-center">
+      {/* <div className="flex items-center justify-center">
           <div className="w-[45rem] flex justify-around items-center">
             <button onClick={prev1} className="cursor-pointer text-[2rem]">{"<"}</button>
             <div className="flex  items-center overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar" ref={cardContainer}>
