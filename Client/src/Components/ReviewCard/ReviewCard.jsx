@@ -4,7 +4,7 @@ import star from "../../assets/star.svg";
 
 function ReviewCard(props) {
   return (
-    <div className="bg-white w-[37rem] my-4  mx-[3.75rem] flex-shrink-0 py-7 px-8 shadow-md rounded-[10px] flex flex-col items-center">
+    <div className="bg-white w-[37rem] my-4 mx-[3.75rem] flex-shrink-0 py-7 px-8 shadow-md rounded-[10px] flex flex-col items-center">
       {/* <img clxassName="w-[5rem] h-[5rem] rounded-[50%] mb-3" src={props.img} alt="" /> */}
       <h3 className="font-medium text-[1.2rem] leading-56">{props.name}</h3>
       {/* <p className="font-light text-[#696969] text-[0.85rem]">{props.desig}</p> */}

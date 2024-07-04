@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from 'react-router-dom'
+
 import {
   logoW,
   logoB,
@@ -38,6 +40,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { ReviewData } from "../../Components/ReviewCard/constant";
+import Footer from "../../Components/Footer/Footer";
 
 function Home() {
   let cardContainer = useRef(null);
@@ -129,10 +132,10 @@ function Home() {
         <header className="flex items-center justify-between">
           <img src={logoW} alt="" />
           <nav className="hidden md:flex text-white gap-[4rem] items-center">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Packages</a>
-            <a href="#">FAQs</a>
+            <Link to='/'>Home</Link>
+            <Link to='/aboutus'>About Us</Link>
+            <Link to='/packages'>Packages</Link>
+            <Link to='/faq'>FAQs</Link>
             <div className="flex gap-[1.5rem]">
               <a href="#">
                 <img className="w-[1.5rem]" src={insta} alt="" />
@@ -161,10 +164,10 @@ function Home() {
           >
             <img className="w-[7rem]" src={logoB} alt="" />
             <div className="flex flex-col gap-6 pl-3 pt-4">
-              <a href="#">Home</a>
-              <a href="#">About Us</a>
-              <a href="#">Packages</a>
-              <a href="#">FAQs</a>
+              <Link to='/'>Home</Link>
+              <Link to='/aboutus'>About Us</Link>
+              <Link to='/packages'>Packages</Link>
+              <Link to='/faq'>FAQs</Link>
               <div className="flex gap-[1rem]">
                 <a href="#">
                   <img className="w-[1.5rem]" src={insta} alt="" />
@@ -200,11 +203,13 @@ function Home() {
             <p className="text-[#DADADA] font-extralight w-[full] md:w-[40rem] text-justify mt-[2rem] md:mt-[4rem] text-[0.85rem] md:text-[0.95rem]">
               This fishing journey requires driving on Himalayan switch back
               roads for long hours, fishing and hiking to get to the best waters
-              in high temperatures that are ideal for Golden Mahseer fishing. 
+              in high temperatures that are ideal for Golden Mahseer fishing.
             </p>
-            <button className="text-black bg-white border-none rounded-[15px] w-full md:w-[20rem] py-4 px-8 text-[1.1rem] font-medium mt-[2rem] md:mt-[4rem]">
-              Plan your Dream trip now
-            </button>
+            <Link to='/packages'>
+              <button className="text-black bg-white border-none rounded-[15px] w-full md:w-[20rem] py-4 px-8 text-[1.1rem] font-medium mt-[2rem] md:mt-[4rem]">
+                Plan your Dream trip now
+              </button>
+            </Link>
           </div>
           <div className="">
             <img className="w-[17rem] md:w-[35rem]" src={landing} alt="" />
@@ -245,7 +250,7 @@ function Home() {
             on these very waters, River Trails embodies the spirit of adventure
             and the pursuit of a legendary catch.
             <span className="text-[#005EE6] block mt-2 text-[0.85rem]">
-              Learn More {" ->"}
+              <Link to='/aboutus'>Learn More {" ->"}</Link>
             </span>
           </p>
         </div>
@@ -365,13 +370,13 @@ function Home() {
         </div>
       </section>
       {/* Reviews */}
-      <section className="p-[4rem] hidden  md:block">
+      {/* <section className="p-[4rem] hidden  md:block">
         <div className="flex flex-col items-center mb-9">
           <p className="text-[#005EE6] font-medium text-[0.85rem]">REVIEWS</p>
           <h2 className="text-[#383838]  text-center text-[1.75rem] leading-8 md:text-[1.75rem]font-semibold ">
             Our Angler’s kind words
           </h2>
-        </div>
+        </div> */}
         {/* <Slider {...settings}>
            
             {ReviewData.map((data) => {
@@ -380,10 +385,10 @@ function Home() {
           
         
             </Slider> */}
-        <div className="flex items-center justify-center">
+        {/* <div className="flex items-center justify-center">
           <div className="w-[45rem] flex justify-around items-center">
-            <button  onClick={prev1} className="cursor-pointer text-[2rem]">{"<"}</button>
-            <div className="flex  items-center overflow-x-scroll scroll-smooth snap-x snap-mandatory" ref={cardContainer}>
+            <button onClick={prev1} className="cursor-pointer text-[2rem]">{"<"}</button>
+            <div className="flex  items-center overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar" ref={cardContainer}>
               {ReviewData.map((data) => {
                 return (
                   <div className="">
@@ -394,8 +399,9 @@ function Home() {
             </div>
             <button onClick={next1} className="cursor-pointer text-[2rem]">{">"}</button>
           </div>
-        </div>
-      </section>
+        </div> */}
+      {/* </section> */}
+      <Footer />
     </>
   );
 }

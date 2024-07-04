@@ -1,8 +1,11 @@
 import React from "react";
 import { bgImg, about, p5, p3 } from "../../assets";
+import Navbar from './../../Components/Navbar/Navbar';
+import Footer from './../../Components/Footer/Footer';
 
 function About() {
-  return (
+  return (<>
+    <Navbar />
     <div className="px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem]">
       <h1 className="px-[1rem] md:px-[0] text-center md:text-left font-bold text-[2.75rem] md:text-[3.5rem] leading-[2.85rem] md:leading-[3.5rem] text-[#3C3C3C]">
         A Dream Realized by <br />{" "}
@@ -45,7 +48,7 @@ function About() {
             <p className="text-justify text-[#7A8189] font-light">
               Driven by his own love for the sport, <span className="text-[#005EE6] font-normal">Daniel</span> envisioned a space
               where anglers could share his passion for <span className="text-[#005EE6] font-normal">The Golden Mahseer and
-              the magic of the Pancheshwar.</span> Leaving behind the corporate world,
+                the magic of the Pancheshwar.</span> Leaving behind the corporate world,
               he embraced the opportunity to follow his dream and create an
               unforgettable experience for fellow fishing enthusiasts.
             </p>
@@ -74,6 +77,8 @@ function About() {
         </div>
       </section>
     </div>
+    <Footer />
+  </>
   );
 }
 

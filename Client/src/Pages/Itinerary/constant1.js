@@ -1,5 +1,5 @@
 import {golden, taj, safari, delhi, local} from "../../assets/index"
-export const itinerary = [
+export const itinerary1 = [
     {
         day: "Day 1",
         title: "Embark on Your Himalayan Fishing Journey",
@@ -43,7 +43,7 @@ export const itinerary = [
     },
 ]
 
-export const addOns = [
+export const addOns1 = [
     {
         img: local,
         hed: "Experience Local Culture:",
