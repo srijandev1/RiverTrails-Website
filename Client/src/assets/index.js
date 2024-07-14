@@ -35,6 +35,11 @@ import taj from "./taj.png"
 import p1a from './p1a.jpeg'
 import p1b from './p1b.jpeg'
 import p1c from './p1c.jpeg'
+import close from './close.svg'
+import left from './left.svg'
+import minus from './minus.svg'
+import closeB from './closeB.svg'
+import next from './next.svg'
 
 export {
   logoB,
@@ -74,4 +79,9 @@ export {
   p1a,
   p1b,
   p1c,
+  close,
+  left,
+  minus,
+  closeB,
+  next
 };

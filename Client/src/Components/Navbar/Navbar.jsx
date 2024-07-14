@@ -13,15 +13,15 @@ function Navbar() {
       <header className="flex items-center justify-between  py-3 border-b-[0.5px] border-solid border-[#0000003a]">
       <Link to='/'><img className="w-[5rem] md:w-[6rem]" src={logoB} alt="" /></Link>
         <nav className="md:flex text-black gap-[4rem] items-center hidden">
-          <Link to='/'>Home</Link>
-          <Link to='/aboutus'>About Us</Link>
-          <Link to='/packages'>Packages</Link>
-          <Link to='/faq'>FAQs</Link>
+          <Link onClick={() => window.scrollTo(0, 0)} to='/'>Home</Link>
+          <Link onClick={() => window.scrollTo(0, 0)} to='/aboutus'>About Us</Link>
+          <Link onClick={() => window.scrollTo(0, 0)} to='/packages'>Packages</Link>
+          <Link onClick={() => window.scrollTo(0, 0)} to='/faq'>FAQs</Link>
           <div className="flex gap-[1.5rem]">
-            <a href="#">
+            <a href="https://www.instagram.com/river__trails/" target="_blank">
               <img className="w-[1.5rem]" src={instaB} alt="" />
             </a>
-            <a href="#">
+            <a href="https://www.facebook.com/p/River-Trails-India-100090244353944/" target="_blank">
               <img className="w-[1.5rem]" src={fbB} alt="" />
             </a>
             <a href="#">

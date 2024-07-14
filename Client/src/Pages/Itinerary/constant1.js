@@ -70,3 +70,12 @@ export const addOns1 = [
         desc: "Uncover the rich history and cultural tapestry of Delhi on a full-day city tour, visiting iconic landmarks like Qutub Minar, Humayun's Tomb, Red Fort, India Gate, and Dilli Haat.",
     },
 ]
+
+export const Name1 = {
+    name: "Time-Crunched Angler",
+    rating: "4.7",
+    duration: 7,
+    nights: 8,
+    days: 9,
+}
+

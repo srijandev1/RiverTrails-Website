@@ -97,3 +97,11 @@ export const addOns3 = [
         desc: "Embark on a thrilling wildlife adventure with a multi-day safari in Ranthambore National Park, known for its majestic tiger population.",
     },
 ]
+
+export const Name3 = {
+    name: "Exploring Angler ",
+    rating: "4.7",
+    duration: 7,
+    nights: 13,
+    days: 14,
+}

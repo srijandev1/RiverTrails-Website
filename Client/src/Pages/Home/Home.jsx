@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import {
   logoW,
@@ -44,8 +44,8 @@ import Footer from "../../Components/Footer/Footer";
 
 function Home() {
   let cardContainer = useRef(null);
-  const prev1 = () => cardContainer.current.scrollLeft -= 750
-  const next1 = () => cardContainer.current.scrollLeft += 750
+  const prev1 = () => (cardContainer.current.scrollLeft -= 715);
+  const next1 = () => (cardContainer.current.scrollLeft += 715);
   const settings = {
     dots: true,
     infinite: true,
@@ -93,7 +93,7 @@ function Home() {
 
   return (
     <>
-      <div className=" w-full h-screen relative px-[1.5rem] md:px-[3rem] py-6">
+      <div className=" w-full h-screen relative px-[1.5rem] md:px-[3rem] py-3">
         <div className="absolute left-0 top-0 z-[-1]">
           <div
             style={{
@@ -105,14 +105,14 @@ function Home() {
         {/* left arrow */}
         <div
           onClick={nextSlide}
-          className="absolute top-[40%] md:top-[50%] left-2 md:left-1 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
+          className="hidden md:block absolute top-[40%] md:top-[50%] left-2 md:left-1 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
         >
           <MdKeyboardArrowLeft size={35} />
         </div>
         {/* right arrow */}
         <div
           onClick={nextSlide}
-          className="absolute top-[40%] md:top-[50%] right-2 md:right-1 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
+          className="hidden md:block absolute top-[40%] md:top-[50%] right-2 md:right-1 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
         >
           <MdKeyboardArrowRight size={35} />
         </div>
@@ -130,12 +130,12 @@ function Home() {
           ))}
         </div>
         <header className="flex items-center justify-between">
-          <img src={logoW} alt="" />
+          <img className="w-[5rem] md:w-[6rem]" src={logoW} alt="" />
           <nav className="hidden md:flex text-white gap-[4rem] items-center">
-            <Link to='/'>Home</Link>
-            <Link to='/aboutus'>About Us</Link>
-            <Link to='/packages'>Packages</Link>
-            <Link to='/faq'>FAQs</Link>
+            <Link to="/">Home</Link>
+            <Link to="/aboutus">About Us</Link>
+            <Link to="/packages">Packages</Link>
+            <Link to="/faq">FAQs</Link>
             <div className="flex gap-[1.5rem]">
               <a href="#">
                 <img className="w-[1.5rem]" src={insta} alt="" />
@@ -158,16 +158,16 @@ function Home() {
           <nav
             className={
               !nav
-                ? "md:hidden shadow-md flex flex-col gap-4 fixed left-0 top-0 w-[60%] bg-white h-screen pt-3 pl-[1.5rem] ease-in-out duration-500"
+                ? "md:hidden shadow-md flex flex-col gap-4 fixed left-0 top-0 w-[60%] z-50 bg-white h-screen pt-3 pl-[1.5rem] ease-in-out duration-500"
                 : "fixed left-[-100%]"
             }
           >
             <img className="w-[7rem]" src={logoB} alt="" />
             <div className="flex flex-col gap-6 pl-3 pt-4">
-              <Link to='/'>Home</Link>
-              <Link to='/aboutus'>About Us</Link>
-              <Link to='/packages'>Packages</Link>
-              <Link to='/faq'>FAQs</Link>
+              <Link to="/">Home</Link>
+              <Link to="/aboutus">About Us</Link>
+              <Link to="/packages">Packages</Link>
+              <Link to="/faq">FAQs</Link>
               <div className="flex gap-[1rem]">
                 <a href="#">
                   <img className="w-[1.5rem]" src={insta} alt="" />
@@ -182,7 +182,7 @@ function Home() {
             </div>
           </nav>
         </header>
-        <section className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between pt-0 md:pt-[4rem]">
+        <section className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between pt-[8rem] md:pt-[4rem]">
           <div className="text-center md:text-left">
             <h1 className="text-white text-[4.4rem] md:text-[7rem] font-bold mt-0 md:mt-[4rem] relative">
               Ultimate{" "}
@@ -200,24 +200,28 @@ function Home() {
             <h1 className="text-[2.2rem] md:text-[5rem] font-extralight text-white leading-3 md:leading-7">
               Fishing Experience
             </h1>
-            <p className="text-[#DADADA] font-extralight w-[full] md:w-[40rem] text-justify mt-[2rem] md:mt-[4rem] text-[0.85rem] md:text-[0.95rem]">
+            <p className="text-[#DADADA]  font-light w-[full] md:w-[40rem] text-justify mt-[4rem] md:mt-[4rem] text-[0.85rem] md:text-[0.95rem]">
               This fishing journey requires driving on Himalayan switch back
               roads for long hours, fishing and hiking to get to the best waters
               in high temperatures that are ideal for Golden Mahseer fishing.
             </p>
-            <Link to='/packages'>
-              <button className="text-black bg-white border-none rounded-[15px] w-full md:w-[20rem] py-4 px-8 text-[1.1rem] font-medium mt-[2rem] md:mt-[4rem]">
+            <Link to="/packages">
+              <button className="text-black bg-white border-none rounded-[15px] w-full md:w-[20rem] py-4 px-8 text-[1.1rem] font-medium mt-[10rem] md:mt-[4rem]">
                 Plan your Dream trip now
               </button>
             </Link>
           </div>
           <div className="">
-            <img className="w-[17rem] md:w-[35rem]" src={landing} alt="" />
+            <img
+              className="hidden md:block w-[17rem] md:w-[35rem]"
+              src={landing}
+              alt=""
+            />
           </div>
         </section>
       </div>
       {/* Features */}
-      <section className="py-[3rem] px-[2rem] md:p-[4rem]">
+      <section className="py-[4rem] px-[2rem] md:p-[4rem]">
         <div className="flex flex-col items-center mb-6 md:mb-9">
           <p className="text-[#005EE6] font-medium text-[0.85rem]">FEATURES</p>
           <h2 className="text-[#383838] text-center text-[1.75rem] leading-8 md:text-[1.75rem] font-semibold ">
@@ -225,7 +229,7 @@ function Home() {
           </h2>
         </div>
         <div className="flex flex-wrap justify-center gap-4 md:gap-7">
-          <UspCard icon={tents} desc="Luxery Tents" />
+          <UspCard icon={tents} desc="Luxury Tents" />
           <UspCard icon={custom} desc="Customize Your Itinerary" />
           <UspCard icon={meals} desc="Freshly Prepared Meals" />
           <UspCard icon={shop} desc="One-Stop Shop for Fishing Needs" />
@@ -250,12 +254,12 @@ function Home() {
             on these very waters, River Trails embodies the spirit of adventure
             and the pursuit of a legendary catch.
             <span className="text-[#005EE6] block mt-2 text-[0.85rem]">
-              <Link to='/aboutus'>Learn More {" ->"}</Link>
+              <Link to="/aboutus">Learn More {" ->"}</Link>
             </span>
           </p>
         </div>
         <img
-          className="md:w-[50rem] md:absolute md:top-[6rem] md:right-[-8rem]"
+          className="md:w-[50rem] md:absolute md:top-[4rem] md:right-[-8rem]"
           src={about}
           alt=""
         />
@@ -269,7 +273,7 @@ function Home() {
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-0 md:justify-between">
-          <Link to='/package/p1'>
+          <Link to="/package/p1">
             <PackageCard
               img={p1}
               title="Time-Crunched Angler "
@@ -280,7 +284,7 @@ function Home() {
               price="$3,200"
             />
           </Link>
-          <Link to='/package/p2'>
+          <Link to="/package/p2">
             <PackageCard
               img={p2}
               title="Easy Going Angler "
@@ -292,7 +296,7 @@ function Home() {
             />
           </Link>
 
-          <Link to='/package/p3'>
+          <Link to="/package/p3">
             <PackageCard
               img={p3}
               title="Exploring Angler "
@@ -303,7 +307,7 @@ function Home() {
               price="$3,200"
             />
           </Link>
-          <Link to='/package/p1'>
+          <Link to="/package/p1">
             <PackageCard
               img={p4}
               title="Time-Crunched Angler"
@@ -317,15 +321,15 @@ function Home() {
         </div>
       </section>
       {/* Gallery */}
-      <section className="p-[4rem] hidden md:block">
+      <section className="p-[2rem] md:p-[4rem]  md:block">
         <div className="flex flex-col items-center mb-9">
           <p className="text-[#005EE6] font-medium text-[0.85rem]">GALLERY</p>
-          <h2 className="text-[#383838]  text-center md:text-left text-[1.75rem] leading-8 md:text-[1.75rem] font-bold ">
+          <h2 className="text-[#383838]  text-center md:text-left text-[1.75rem] leading-8 md:text-[1.75rem] font-semibold ">
             River Rails’s Gallery
           </h2>
         </div>
-        <div className="flex gap-4 w-full">
-          <div className="w-[50%] h-[30rem] bg-black rounded-[10px] overflow-hidden">
+        <div className="flex md:flex-row flex-col gap-2 md:gap-4 w-full">
+          <div className="w-full md:w-[50%] md:h-[30rem] bg-black rounded-[10px] overflow-hidden">
             <img
               className="w-full h-full object-cover duration-500 hover:scale-110 "
               src={bgImg}
@@ -333,9 +337,9 @@ function Home() {
             />
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex h-[15rem] md:flex-col gap-2 md:gap-4">
             <div className="flex gap-4">
-              <div className="w-[29rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+              <div className="w-[10rem] md:w-[29rem] md:h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
                 <img
                   className="w-full h-full object-cover duration-500 hover:scale-110"
                   src={p1}
@@ -343,15 +347,15 @@ function Home() {
                 />
               </div>
             </div>
-            <div className="flex gap-4">
-              <div className="w-[14rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+              <div className="md:w-[14rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
                 <img
                   className="w-full h-full object-cover duration-500 hover:scale-110"
                   src={p3}
                   alt=""
                 />
               </div>
-              <div className="w-[14rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+              <div className="md:w-[14rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
                 <img
                   className="w-full h-full object-cover duration-500 hover:scale-110"
                   src={p4}
@@ -360,15 +364,19 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <div className="w-[14rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+          <div className="flex md:flex-col gap-2 md:gap-4">
+            <div className="w-[14rem] h-[7rem] md:h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
               <img
                 className="w-full h-full object-cover duration-500 hover:scale-110"
                 src={p5}
                 alt=""
               />
             </div>
-            <div className="w-[14rem] h-[14.5rem] rounded-[10px] overflow-hidden">
+            <div className="w-[14rem] h-[7rem] relative md:h-[14.5rem] rounded-[10px] overflow-hidden ">
+              <div className="absolute backdrop-blur-sm bg-[#ffffff13] w-[14rem] h-[7rem] md:h-[14.5rem] text-white flex flex-col items-center justify-center duration-300 cursor-pointer hover:bg-[#ffffff1c]">
+               <p className="text-[2.3rem] mb-[-1rem]">10 +</p>
+               <p className="text-[1.5rem] font-extralight">more</p>
+              </div>
               <img
                 className="w-full h-full object-cover duration-500 hover:scale-110"
                 src={p2}
@@ -379,37 +387,47 @@ function Home() {
         </div>
       </section>
       {/* Reviews */}
-      {/* <section className="p-[4rem] hidden  md:block">
+      <section className="p-[4rem]   md:block">
         <div className="flex flex-col items-center mb-9">
           <p className="text-[#005EE6] font-medium text-[0.85rem]">REVIEWS</p>
-          <h2 className="text-[#383838]  text-center text-[1.75rem] leading-8 md:text-[1.75rem]font-semibold ">
+          <h2 className="text-[#383838]  text-center text-[1.75rem] leading-8 md:text-[1.75rem] font-semibold ">
             Our Angler’s kind words
           </h2>
-        </div> */}
-      {/* <Slider {...settings}>
-           
-            {ReviewData.map((data) => {
-              return <div className=""><ReviewCard name={data.name} review={data.msg}/></div> 
-            })}
-          
-        
-            </Slider> */}
-      {/* <div className="flex items-center justify-center">
-          <div className="w-[45rem] flex justify-around items-center">
-            <button onClick={prev1} className="cursor-pointer text-[2rem]">{"<"}</button>
-            <div className="flex  items-center overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar" ref={cardContainer}>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <div className="w-[90vw] md:w-[45rem] flex justify-around items-center">
+            <button
+              onClick={prev1}
+              className="hidden md:block cursor-pointer text-[2rem]"
+            >
+              {"<"}
+            </button>
+            <div
+              className="flex  items-center overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar"
+              ref={cardContainer}
+            >
               {ReviewData.map((data) => {
                 return (
                   <div className="">
-                    <ReviewCard className="snap-start" name={data.name} review={data.msg} />
+                    <ReviewCard
+                      className="snap-start"
+                      name={data.name}
+                      review={data.msg}
+                    />
                   </div>
                 );
               })}
             </div>
-            <button onClick={next1} className="cursor-pointer text-[2rem]">{">"}</button>
+            <button
+              onClick={next1}
+              className="hidden md:block cursor-pointer text-[2rem]"
+            >
+              {">"}
+            </button>
           </div>
-        </div> */}
-      {/* </section> */}
+        </div>
+      </section>
       <Footer />
     </>
   );
