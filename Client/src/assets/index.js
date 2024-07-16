@@ -31,15 +31,30 @@ import delhi from "./delhi.png";
 import golden from "./golden.png";
 import local from "./local.png";
 import safari from "./safari.png";
-import taj from "./taj.png"
-import p1a from './p1a.jpeg'
-import p1b from './p1b.jpeg'
-import p1c from './p1c.jpeg'
-import close from './close.svg'
-import left from './left.svg'
-import minus from './minus.svg'
-import closeB from './closeB.svg'
-import next from './next.svg'
+import taj from "./taj.png";
+import p1a from "./p1a.jpeg";
+import p1b from "./p1b.jpeg";
+import p1c from "./p1c.jpeg";
+import close from "./close.svg";
+import left from "./left.svg";
+import minus from "./minus.svg";
+import closeB from "./closeB.svg";
+import next from "./next.svg";
+import tent1 from "./tent1.jpg";
+import tent2 from "./tent2.jpg";
+import tent3 from "./tent3.jpg";
+import scene1 from "./scene1.jpeg";
+import scene2 from "./scene2.jpeg";
+import scene3 from "./scene3.jpeg";
+import meal1 from "./meal1.jpeg";
+import meal2 from "./meal2.webp";
+import meal3 from "./meal3.jpeg";
+import shop1 from "./shop1.jpeg";
+import shop2 from "./shop2.avif";
+import shop3 from "./shop3.jpg";
+import guide1 from "./guide1.jpeg";
+import guide2 from "./guide2.jpg";
+import guide3 from "./guide3.jpg";
 
 export {
   logoB,
@@ -83,5 +98,20 @@ export {
   left,
   minus,
   closeB,
-  next
+  next,
+  tent1,
+  tent2,
+  tent3,
+  meal1,
+  meal2,
+  meal3,
+  shop1,
+  shop2,
+  shop3,
+  scene1,
+  scene2,
+  scene3,
+  guide1,
+  guide2,
+  guide3
 };

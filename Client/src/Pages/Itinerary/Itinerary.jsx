@@ -50,7 +50,7 @@ function Itinerary() {
   return (
     <>
       <Navbar />
-      <div className="flex px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem] justify-between mb-[4rem] md:mb-[8rem]">
+      <div className="flex px-[2rem] md:px-[3rem] pt-[5rem] md:pt-[7rem] justify-between mb-[4rem] md:mb-[8rem] relative">
         <section className="md:w-[63%]">
           <div className="text-[#696969] text-[0.75rem] md:text-[1rem] font-extralight md:mb-2">
             <a href="">Home</a> {" > "}

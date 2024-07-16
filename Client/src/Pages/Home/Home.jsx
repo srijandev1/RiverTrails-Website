@@ -10,12 +10,6 @@ import {
   fb,
   insta,
   landing,
-  tents,
-  meals,
-  shop,
-  scene,
-  custom,
-  guide,
   about,
   p1,
   p2,
@@ -41,6 +35,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { ReviewData } from "../../Components/ReviewCard/constant";
 import Footer from "../../Components/Footer/Footer";
+import UspPopup from "../../Components/UspPopup/UspPopup";
+import { UspData } from "../../Components/UspCard/UspData";
 
 function Home() {
   let cardContainer = useRef(null);
@@ -91,6 +87,28 @@ function Home() {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
+  const [popupData, setPopupData] = useState(null);
+
+  const handleCardClick = (data) => {
+    setPopupData(data);
+  };
+
+  const closePopup = () => {
+    setPopupData(null);
+  };
+  useEffect(() => {
+    if (popupData) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Clean up by removing the class when the component unmounts or when popupData changes
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [popupData]);
+
   return (
     <>
       <div className=" w-full h-screen relative px-[1.5rem] md:px-[3rem] py-3">
@@ -99,7 +117,7 @@ function Home() {
             style={{
               backgroundImage: `linear-gradient(107deg, #000 0.91%, rgba(0, 0, 0, 0) 99%), url(${slides[currentIndex].img})`,
             }}
-            className="w-[100vw] h-[48rem] md:h-[100vh] bg-center bg-cover"
+            className="w-[100vw] h-[100svh] md:h-[100vh] bg-center bg-cover"
           ></div>
         </div>
         {/* left arrow */}
@@ -132,10 +150,10 @@ function Home() {
         <header className="flex items-center justify-between">
           <img className="w-[5rem] md:w-[6rem]" src={logoW} alt="" />
           <nav className="hidden md:flex text-white gap-[4rem] items-center">
-            <Link to="/">Home</Link>
-            <Link to="/aboutus">About Us</Link>
-            <Link to="/packages">Packages</Link>
-            <Link to="/faq">FAQs</Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/">Home</Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">About Us</Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/packages">Packages</Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/faq">FAQs</Link>
             <div className="flex gap-[1.5rem]">
               <a href="#">
                 <img className="w-[1.5rem]" src={insta} alt="" />
@@ -164,10 +182,10 @@ function Home() {
           >
             <img className="w-[7rem]" src={logoB} alt="" />
             <div className="flex flex-col gap-6 pl-3 pt-4">
-              <Link to="/">Home</Link>
-              <Link to="/aboutus">About Us</Link>
-              <Link to="/packages">Packages</Link>
-              <Link to="/faq">FAQs</Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/">Home</Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">About Us</Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/packages">Packages</Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/faq">FAQs</Link>
               <div className="flex gap-[1rem]">
                 <a href="#">
                   <img className="w-[1.5rem]" src={insta} alt="" />
@@ -205,7 +223,7 @@ function Home() {
               roads for long hours, fishing and hiking to get to the best waters
               in high temperatures that are ideal for Golden Mahseer fishing.
             </p>
-            <Link to="/packages">
+            <Link onClick={() => window.scrollTo(0, 0)} to="/packages">
               <button className="text-black bg-white border-none rounded-[15px] w-full md:w-[20rem] py-4 px-8 text-[1.1rem] font-medium mt-[10rem] md:mt-[4rem]">
                 Plan your Dream trip now
               </button>
@@ -228,13 +246,26 @@ function Home() {
             What this place offers
           </h2>
         </div>
+     
         <div className="flex flex-wrap justify-center gap-4 md:gap-7">
-          <UspCard icon={tents} desc="Luxury Tents" />
-          <UspCard icon={custom} desc="Customize Your Itinerary" />
-          <UspCard icon={meals} desc="Freshly Prepared Meals" />
-          <UspCard icon={shop} desc="One-Stop Shop for Fishing Needs" />
-          <UspCard icon={scene} desc="Unwind in a Serene Location" />
-          <UspCard icon={guide} desc="Camp Owner as Your Guide" />
+          {UspData.map((usp, index) => (
+            <UspCard
+              key={index}
+              icon={usp.icon}
+              title={usp.title}
+              onClick={() =>
+                handleCardClick({
+                  icon: usp.icon,
+                  title: usp.title,
+                  desc: usp.desc,
+                  img1: usp.img1,
+                  img2: usp.img2,
+                  img3: usp.img3,
+                })
+              }
+            />
+          ))}
+          {popupData && <UspPopup data={popupData} onClose={closePopup} />}
         </div>
       </section>
       {/* About us */}
@@ -254,7 +285,7 @@ function Home() {
             on these very waters, River Trails embodies the spirit of adventure
             and the pursuit of a legendary catch.
             <span className="text-[#005EE6] block mt-2 text-[0.85rem]">
-              <Link to="/aboutus">Learn More {" ->"}</Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">Learn More {" ->"}</Link>
             </span>
           </p>
         </div>
@@ -273,7 +304,7 @@ function Home() {
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-0 md:justify-between">
-          <Link to="/package/p1">
+          <Link onClick={() => window.scrollTo(0, 0)} to="/package/p1">
             <PackageCard
               img={p1}
               title="Time-Crunched Angler "
@@ -284,7 +315,7 @@ function Home() {
               price="$3,200"
             />
           </Link>
-          <Link to="/package/p2">
+          <Link onClick={() => window.scrollTo(0, 0)} to="/package/p2">
             <PackageCard
               img={p2}
               title="Easy Going Angler "
@@ -296,7 +327,7 @@ function Home() {
             />
           </Link>
 
-          <Link to="/package/p3">
+          <Link onClick={() => window.scrollTo(0, 0)} to="/package/p3">
             <PackageCard
               img={p3}
               title="Exploring Angler "
@@ -307,7 +338,7 @@ function Home() {
               price="$3,200"
             />
           </Link>
-          <Link to="/package/p1">
+          <Link onClick={() => window.scrollTo(0, 0)} to="/package/p1">
             <PackageCard
               img={p4}
               title="Time-Crunched Angler"
@@ -329,7 +360,7 @@ function Home() {
           </h2>
         </div>
         <div className="flex md:flex-row flex-col gap-2 md:gap-4 w-full">
-          <div className="w-full md:w-[50%] md:h-[30rem] bg-black rounded-[10px] overflow-hidden">
+          <div className="w-full md:w-[50%] md:h-[30rem] bg-black rounded-[5px] md:rounded-[10px] overflow-hidden">
             <img
               className="w-full h-full object-cover duration-500 hover:scale-110 "
               src={bgImg}
@@ -339,7 +370,7 @@ function Home() {
 
           <div className="flex h-[15rem] md:flex-col gap-2 md:gap-4">
             <div className="flex gap-4">
-              <div className="w-[10rem] md:w-[29rem] md:h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+              <div className="w-[10rem] md:w-[29rem] md:h-[14.5rem] bg-black rounded-[5px] md:rounded-[10px] overflow-hidden">
                 <img
                   className="w-full h-full object-cover duration-500 hover:scale-110"
                   src={p1}
@@ -348,14 +379,14 @@ function Home() {
               </div>
             </div>
             <div className="flex flex-col md:flex-row gap-2 md:gap-4">
-              <div className="md:w-[14rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+              <div className="md:w-[14rem] h-[14.5rem] bg-black rounded-[5px] md:rounded-[10px] overflow-hidden">
                 <img
                   className="w-full h-full object-cover duration-500 hover:scale-110"
                   src={p3}
                   alt=""
                 />
               </div>
-              <div className="md:w-[14rem] h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+              <div className="md:w-[14rem] h-[14.5rem] bg-black rounded-[5px] md:rounded-[10px] overflow-hidden">
                 <img
                   className="w-full h-full object-cover duration-500 hover:scale-110"
                   src={p4}
@@ -365,17 +396,17 @@ function Home() {
             </div>
           </div>
           <div className="flex md:flex-col gap-2 md:gap-4">
-            <div className="w-[14rem] h-[7rem] md:h-[14.5rem] bg-black rounded-[10px] overflow-hidden">
+            <div className="w-[14rem] h-[7rem] md:h-[14.5rem] bg-black rounded-[5px] md:rounded-[10px] overflow-hidden">
               <img
                 className="w-full h-full object-cover duration-500 hover:scale-110"
                 src={p5}
                 alt=""
               />
             </div>
-            <div className="w-[14rem] h-[7rem] relative md:h-[14.5rem] rounded-[10px] overflow-hidden ">
-              <div className="absolute backdrop-blur-sm bg-[#ffffff13] w-[14rem] h-[7rem] md:h-[14.5rem] text-white flex flex-col items-center justify-center duration-300 cursor-pointer hover:bg-[#ffffff1c]">
-               <p className="text-[2.3rem] mb-[-1rem]">10 +</p>
-               <p className="text-[1.5rem] font-extralight">more</p>
+            <div className="w-[14rem] h-[7rem] relative md:h-[14.5rem] rounded-[5px] md:rounded-[10px] overflow-hidden ">
+              <div className="absolute backdrop-blur-sm bg-[#ffffff13] w-full md:w-[14rem] h-[7rem] md:h-[14.5rem] text-white flex flex-col items-center justify-center duration-300 cursor-pointer hover:bg-[#ffffff1c]">
+                <p className="text-[2rem] md:text-[2.3rem] mb-[-0.85rem] md:mb-[-1rem]">10 +</p>
+                <p className="text-[1.3rem] md:text-[1.5rem] font-extralight">more</p>
               </div>
               <img
                 className="w-full h-full object-cover duration-500 hover:scale-110"

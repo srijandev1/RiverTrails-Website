@@ -1,5 +1,6 @@
 export const dates = [
     {
+        season: "Summer",
         startDay: "Saturday",
         startDate: "1 Mar, 2025",
         endDay: "Monday",
@@ -7,6 +8,7 @@ export const dates = [
         anglerSpaces: 0,
     },
     {
+        season: "Summer",
         startDay: "Saturday",
         startDate: "8 Mar, 2025",
         endDay: "Monday",
@@ -14,6 +16,7 @@ export const dates = [
         anglerSpaces: 3,
     },
     {
+        season: "Summer",
         startDay: "Saturday",
         startDate: "15 Mar, 2025",
         endDay: "Monday",
@@ -21,6 +24,7 @@ export const dates = [
         anglerSpaces: 4,
     },
     {
+        season: "Autumn",
         startDay: "Saturday",
         startDate: "22 Mar, 2025",
         endDay: "Monday",
@@ -28,6 +32,7 @@ export const dates = [
         anglerSpaces: 3,
     },
     {
+        season: "Autumn",
         startDay: "Saturday",
         startDate: "29 Mar, 2025",
         endDay: "Monday",
@@ -35,6 +40,7 @@ export const dates = [
         anglerSpaces: 2,
     },
     {
+        season: "Autumn",
         startDay: "Saturday",
         startDate: "5 April, 2025",
         endDay: "Monday",
@@ -42,6 +48,7 @@ export const dates = [
         anglerSpaces: 1,
     },
     {
+        season: "Autumn",
         startDay: "Saturday",
         startDate: "11 April, 2025",
         endDay: "Monday",
@@ -49,6 +56,7 @@ export const dates = [
         anglerSpaces: 3,
     },
     {
+        season: "Autumn",
         startDay: "Saturday",
         startDate: "17 April, 2025",
         endDay: "Monday",
