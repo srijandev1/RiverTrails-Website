@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { dates } from "./dates";
 import { closeB, next } from "../../assets/index";
+import { FaCalendar } from "react-icons/fa";
 
-function DatesSelect({ dateSelect, handleDateSelect }) {
+function DatesSelect({ dateSelect, handleDateSelect, dateDataSelect }) {
   const [selectedSeason, setSelectedSeason] = useState("Summer");
 
   const handleSeasonSelect = (season) => {
     setSelectedSeason(season);
   };
+
   return (
-    <div className="">
     <div
       className={
         !dateSelect
@@ -18,7 +19,10 @@ function DatesSelect({ dateSelect, handleDateSelect }) {
       }
     >
       <div className="flex justify-between items-center">
-        <p className="font-medium text-[1.1rem]">Select Dates</p>{" "}
+        <p className="font-medium flex items-center gap-2 text-[1.1rem]">
+          <FaCalendar />
+          Select Dates{" "}
+        </p>
         <span>
           <img
             onClick={handleDateSelect}
@@ -60,45 +64,49 @@ function DatesSelect({ dateSelect, handleDateSelect }) {
         </div>
       </div>
       <div className="flex flex-col h-[27rem] overflow-y-scroll md:px-4">
-        {dates.filter((date) => {
-           return selectedSeason === "Summer"
-           ? date.season === "Summer"
-           : date.season === "Autumn";
-        }).map((date) => (
-          <div className="bg-white border-b-[0.5px] border-[#00000045] w-full flex md:flex-row flex-col justify-between py-5 ">
-            <div className="flex gap-[4rem]">
-              <div className="md:w-[7rem]">
-                <p className="text-[#696969] text-[0.75rem] mb-[-0.2rem]">
-                  {date.startDay}
-                </p>
-                <h4>{date.startDate}</h4>
+        {dates
+          .filter((date) => {
+            return selectedSeason === "Summer"
+              ? date.season === "Summer"
+              : date.season === "Autumn";
+          })
+          .map((date) => (
+            <div className="bg-white border-b-[0.5px] border-[#00000045] w-full flex md:flex-row flex-col justify-between py-5 ">
+              <div className="flex gap-[4rem]">
+                <div className="md:w-[7rem]">
+                  <p className="text-[#696969] text-[0.75rem] mb-[-0.2rem]">
+                    {date.startDay}
+                  </p>
+                  <h4>{date.startDate}</h4>
+                </div>
+                <img className="w-[1rem]" src={next} alt="" />
+                <div className="md:w-[7rem]">
+                  <p className="text-[#696969] text-[0.75rem] mb-[-0.2rem]">
+                    {date.endDay}
+                  </p>
+                  <h4>{date.endDate}</h4>
+                </div>
               </div>
-              <img className="w-[1rem]" src={next} alt="" />
-              <div className="md:w-[7rem]">
-                <p className="text-[#696969] text-[0.75rem] mb-[-0.2rem]">
-                  {date.endDay}
+              <div className="flex md:block gap-1">
+                <p className="text-[#696969] text-[0.75rem] md:mb-[-0.2rem]">
+                  Angler Spaces
                 </p>
-                <h4>{date.endDate}</h4>
+                <h4 className=" text-[0.75rem] md:text-[1rem]">
+                  {date.anglerSpaces} left
+                </h4>
               </div>
+              <button
+                onClick={() => {
+                  dateDataSelect(date);
+                  handleDateSelect();
+                }}
+                className="bg-black text-white mt-3 md:mt-0 px-4 py-2 md:py-0 rounded-[7px] md:rounded-[10px]"
+              >
+                Confirm Dates
+              </button>
             </div>
-            <div className="flex md:block gap-1">
-              <p className="text-[#696969] text-[0.75rem] md:mb-[-0.2rem]">
-                Angler Spaces
-              </p>
-              <h4 className=" text-[0.75rem] md:text-[1rem]">
-                {date.anglerSpaces} left
-              </h4>
-            </div>
-            <button
-              onClick={handleDateSelect}
-              className="bg-black text-white mt-3 md:mt-0 px-4 py-2 md:py-0 rounded-[7px] md:rounded-[10px]"
-            >
-              Confirm Dates
-            </button>
-          </div>
-        ))}
+          ))}
       </div>
-    </div>
     </div>
   );
 }

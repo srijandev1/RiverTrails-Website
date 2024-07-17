@@ -17,6 +17,7 @@ function Navbar() {
           <Link onClick={() => window.scrollTo(0, 0)} to='/aboutus'>About Us</Link>
           <Link onClick={() => window.scrollTo(0, 0)} to='/packages'>Packages</Link>
           <Link onClick={() => window.scrollTo(0, 0)} to='/faq'>FAQs</Link>
+          <Link onClick={() => window.scrollTo(0, 0)} to="/gallery">Gallery</Link>
           <div className="flex gap-[1.5rem]">
             <a href="https://www.instagram.com/river__trails/" target="_blank">
               <img className="w-[1.5rem]" src={instaB} alt="" />
@@ -39,6 +40,7 @@ function Navbar() {
           <Link to='/aboutus'>About Us</Link>
           <Link to='/packages'>Packages</Link>
           <Link to='/faq'>FAQs</Link>
+          <Link onClick={() => window.scrollTo(0, 0)} to="/gallery">Gallery</Link>
           <div className="flex gap-[1rem]">
             <a href="#">
               <img className="w-[1.5rem]" src={instaB} alt="" />

@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { star, left, close, minus } from "../../assets/index";
 import { IoIosAddCircle } from "react-icons/io";
 import Itinerary from "../../Pages/Itinerary/Itinerary";
+import { FaCalendar } from "react-icons/fa";
+import { next } from "../../assets/index";
+import { Link } from "react-router-dom";
 
 function CheckAvailCard(props) {
   const [selectAddons, setSelectAddons] = useState(false);
   const handleSelectAddons = () => {
     setSelectAddons(!selectAddons);
-  }
+  };
+
   return (
     <div
       className={
@@ -76,55 +80,103 @@ function CheckAvailCard(props) {
             <option value="2027">4</option>
           </select>
         </div>
-        <div onClick={props.datePopup} className="bg-[#F2F2F2]  px-4 py-3 rounded-[10px] w-[100%] mt-4 flex justify-between cursor-pointer">
-          Select Date
-          <span>{" >"}</span>
+        <div
+          onClick={props.datePopup}
+          className="bg-[#F2F2F2]  px-4 py-3 rounded-[10px] h-[3.5rem] w-[100%] mt-4 flex gap-2 items-center cursor-pointer"
+        >
+          {props.selectedDateData ? (
+            <div className="w-full flex justify-between">
+              <div className="">
+                <p className="text-[#696969] text-[0.75rem] mb-[-0.2rem]">
+                  {props.selectedDateData.startDay}
+                </p>
+                <h4>{props.selectedDateData.startDate}</h4>
+              </div>
+              <img className="w-[1rem]" src={next} alt="" />
+              <div className="">
+                <p className="text-[#696969] text-[0.75rem] mb-[-0.2rem]">
+                  {props.selectedDateData.endDay}
+                </p>
+                <h4>{props.selectedDateData.endDate}</h4>
+              </div>
+            </div>
+          ) : (
+            <>
+              <FaCalendar />
+              <span>Select Date</span>
+            </>
+          )}
         </div>
         <div>
           <div className=" mt-6 mb-2 text-[#005EE6] ">
-            <p className="text-[1rem] flex items-center  justify-between md:text-[0.85rem] mb-3">Select Addons  <span onClick={handleSelectAddons} className="cursor-pointer">
-              <IoIosAddCircle  size={35} />
-            </span></p>
-           <div>
-            <p className="flex justify-between items-center text-black pr-2">Experience local culture <span><img src={minus} alt="" /></span>
+            <p className="text-[1rem] flex items-center  justify-between md:text-[0.85rem] mb-3">
+              Select Addons{" "}
+              <span onClick={handleSelectAddons} className="cursor-pointer">
+                <IoIosAddCircle size={35} />
+              </span>
             </p>
-           </div>
+            <div>
+              <p className="flex justify-between items-center text-black pr-2">
+                Experience local culture{" "}
+                <span>
+                  <img src={minus} alt="" />
+                </span>
+              </p>
+            </div>
           </div>
         </div>
+        <Link to='/requestbooking'>
         <button className="bg-[#005EE6] text-white p-4 rounded-[10px] w-full mt-8">
           Reserve
         </button>
+        </Link>
+       
         <p className="text-[#696969]  text-[0.85rem] text-center font-light mt-4">
           You won’t be charged yet
         </p>
       </div>
-      <div className={!selectAddons ? "hidden" : "bg-white w-[20rem] flex flex-col items-center shadow-md  px-4 py-3  absolute left-1/2 transform -translate-x-1/2 top-[5rem] rounded-[15px]"}>
+      <div
+        className={
+          !selectAddons
+            ? "hidden"
+            : "bg-white w-[20rem] flex flex-col items-center shadow-md  px-4 py-3  absolute left-1/2 transform -translate-x-1/2 top-[5rem] rounded-[15px]"
+        }
+      >
         <p className="flex w-full justify-between items-center mb-4 font-medium text-[0.9rem] text-[#005EE6]">
-          Select Addons <img className="cursor-pointer" onClick={handleSelectAddons} src={close} alt="" />
+          Select Addons{" "}
+          <img
+            className="cursor-pointer"
+            onClick={handleSelectAddons}
+            src={close}
+            alt=""
+          />
         </p>
         <div className="flex flex-col gap-2">
           <label className="cursor-pointer" htmlFor="local">
-            <input type="checkbox" name=""  id="local" />{" "}
-            Experience local culture
+            <input type="checkbox" name="" id="local" /> Experience local
+            culture
           </label>
           <label className="cursor-pointer" htmlFor="taj">
-            <input type="checkbox" name="" id="taj" /> Witness
-            The Marvelous Taj Mahal
+            <input type="checkbox" name="" id="taj" /> Witness The Marvelous Taj
+            Mahal
           </label>
           <label className="cursor-pointer" htmlFor="golden">
-            <input type="checkbox" name="" id="golden" /> Golden
-            Triangle Tour{" "}
+            <input type="checkbox" name="" id="golden" /> Golden Triangle Tour{" "}
           </label>
           <label className="cursor-pointer" htmlFor="safari">
-            <input type="checkbox" name=""  id="safari" />{" "}
-            Ranthambore Tiger Safari
+            <input type="checkbox" name="" id="safari" /> Ranthambore Tiger
+            Safari
           </label>
           <label className="cursor-pointer" htmlFor="delhi">
-            <input type="checkbox" name=""  id="delhi" />{" "}
-            Explore Vibrant Delhi
+            <input type="checkbox" name="" id="delhi" /> Explore Vibrant Delhi
           </label>
         </div>
-        <button onClick={handleSelectAddons} className="bg-[#005EE6] text-white py-2 px-6 cursor-pointer rounded-[10px] mt-6 mb-4">Save</button>
+        <button
+          onClick={handleSelectAddons}
+          className="bg-[#005EE6] text-white py-2 px-6 cursor-pointer rounded-[10px] mt-6 mb-4"
+        >
+          Save
+        </button>
       </div>
     </div>
   );

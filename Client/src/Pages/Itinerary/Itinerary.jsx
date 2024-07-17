@@ -36,15 +36,21 @@ function Itinerary() {
     nameMain = Name3;
   }
   const [datePopup, setDatePopup] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
   useEffect(() => {
     if (datePopup) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
   }, [datePopup]);
   const handleDatePopup = () => {
     setDatePopup(!datePopup);
+  
+  };
+  const selectDateData = (date) => {
+    console.log("Selected date:", date);
+    setSelectedDate(date);
   }
 
   return (
@@ -139,6 +145,7 @@ function Itinerary() {
         </section>
         <section className={!showPop ? "hidden md:block" : "block md:block"}>
           <CheckAvailCard
+            selectedDateData={selectedDate}
             title={nameMain.name}
             rating={nameMain.rating}
             totaldays={nameMain.duration}
@@ -178,7 +185,11 @@ function Itinerary() {
             </p>
           </div>
         </div>
-      <DatesSelect dateSelect = {datePopup} handleDateSelect = {handleDatePopup}/>
+        <DatesSelect
+          dateSelect={datePopup}
+          handleDateSelect={handleDatePopup}
+          dateDataSelect = {selectDateData}
+        />
       </div>
 
       <Footer />

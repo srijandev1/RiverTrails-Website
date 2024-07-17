@@ -32,7 +32,6 @@ import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import { ReviewData } from "../../Components/ReviewCard/constant";
 import Footer from "../../Components/Footer/Footer";
 import UspPopup from "../../Components/UspPopup/UspPopup";
@@ -42,13 +41,7 @@ function Home() {
   let cardContainer = useRef(null);
   const prev1 = () => (cardContainer.current.scrollLeft -= 715);
   const next1 = () => (cardContainer.current.scrollLeft += 715);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+ 
 
   const [nav, setNav] = useState(true);
   const handleNav = () => {
@@ -83,7 +76,7 @@ function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
@@ -103,7 +96,6 @@ function Home() {
       document.body.classList.remove("overflow-hidden");
     }
 
-    // Clean up by removing the class when the component unmounts or when popupData changes
     return () => {
       document.body.classList.remove("overflow-hidden");
     };
@@ -154,6 +146,7 @@ function Home() {
             <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">About Us</Link>
             <Link onClick={() => window.scrollTo(0, 0)} to="/packages">Packages</Link>
             <Link onClick={() => window.scrollTo(0, 0)} to="/faq">FAQs</Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/gallery">Gallery</Link>
             <div className="flex gap-[1.5rem]">
               <a href="#">
                 <img className="w-[1.5rem]" src={insta} alt="" />
@@ -404,10 +397,13 @@ function Home() {
               />
             </div>
             <div className="w-[14rem] h-[7rem] relative md:h-[14.5rem] rounded-[5px] md:rounded-[10px] overflow-hidden ">
+              <Link to="/gallery">
               <div className="absolute backdrop-blur-sm bg-[#ffffff13] w-full md:w-[14rem] h-[7rem] md:h-[14.5rem] text-white flex flex-col items-center justify-center duration-300 cursor-pointer hover:bg-[#ffffff1c]">
                 <p className="text-[2rem] md:text-[2.3rem] mb-[-0.85rem] md:mb-[-1rem]">10 +</p>
                 <p className="text-[1.3rem] md:text-[1.5rem] font-extralight">more</p>
               </div>
+              </Link>
+            
               <img
                 className="w-full h-full object-cover duration-500 hover:scale-110"
                 src={p2}

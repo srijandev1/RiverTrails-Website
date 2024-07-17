@@ -7,7 +7,8 @@ import About from './Pages/About/About';
 import Packages from './Pages/Packages/Packages';
 import FAQs from './Pages/FAQs/FAQs';
 import Itinerary from './Pages/Itinerary/Itinerary';
-
+import Gallery from './Pages/Gallery/Gallery';
+import RequestBooking from './Pages/RequestBooking/RequestBooking';
 
 
 
@@ -23,6 +24,8 @@ const router = createBrowserRouter(
             <Route path=':id' element={<Itinerary/>} />
           </Route>
           <Route path='/faq' element={<FAQs/>} />
+          <Route path='/gallery' element={<Gallery/>} />
+          <Route path='/requestbooking' element={<RequestBooking/>} />
         </Route>
 
   )
