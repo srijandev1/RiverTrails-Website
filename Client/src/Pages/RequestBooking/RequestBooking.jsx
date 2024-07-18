@@ -1,8 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { logoB, star } from "../../assets";
 
 function RequestBooking() {
+  const location = useLocation();
+  const { selectedDateData, selectedAddons, itiData, anglerSpaces } =
+    location.state || {};
+  const [anglerSpaces1, setAnglerSpaces1] = useState(anglerSpaces);
+  const handleIncrement = () => {
+    setAnglerSpaces1((prev) => (prev < 4 ? prev + 1 : prev));
+  };
+
+  const handleDecrement = () => {
+    setAnglerSpaces1((prev) => (prev > 1 ? prev - 1 : prev));
+  };
   return (
     <div className="w-full h-full relative ">
       <div className=" px-[1.5rem] md:px-[3rem] bg-[#ffffff] ">
@@ -12,18 +23,25 @@ function RequestBooking() {
           </Link>
         </div>
         <div className="mb-5 md:mb-8">
-          <h1 className="text-[1.5rem] leading-[2rem]  md:text-[2.5rem] md:leading-[3rem] font-bold text-[#3C3C3C]  md:mb-1">
+          {itiData.title && (
+            <h1 className="text-[1.5rem] leading-[2rem]  md:text-[2.5rem] md:leading-[3rem] font-bold text-[#3C3C3C]  md:mb-1">
+              {itiData.title}
+            </h1>
+          )}
+          {/* <h1 className="text-[1.5rem] leading-[2rem]  md:text-[2.5rem] md:leading-[3rem] font-bold text-[#3C3C3C]  md:mb-1">
             Time-Crunched Angler
-          </h1>
+          </h1> */}
           <div className="flex flex-col md:flex-row gap-0 md:gap-6">
             <p className="text-[0.85rem] md:text-[1.1rem]">
               <span className="font-bold">7 Days</span> of Fishing{" "}
               <span className="font-light text-[#696969]">
-                (8 Nights/9 Days)
+                ({itiData.night && `${itiData.night} Nights`}/{" "}
+                {itiData.days && `${itiData.days} Days`})
               </span>
             </p>
             <p className="flex items-center text-[0.85rem] md:text-[1.1rem] font-semibold">
-              <img className="w-[1.3rem] mr-[0.45rem]" src={star} alt="" /> 4.6{" "}
+              <img className="w-[1.3rem] mr-[0.45rem]" src={star} alt="" />{" "}
+              {itiData.rating && `${itiData.rating}`}{" "}
               <span className="ml-1 md:ml-[1rem] text-[#696969] font-extralight">
                 (12 reviews)
               </span>
@@ -31,7 +49,9 @@ function RequestBooking() {
           </div>
         </div>
         <div className="md:absolute md:right-0 md:top-0 bg-white rounded-[10px] md:rounded-none shadow-md md:h-[100vh] md:mb-0 mb-10 md:w-[30vw] px-6 py-4 md:p-8">
-          <h2 className="font-medium md:text-[1.2rem] mb-4">Package overview</h2>
+          <h2 className="font-medium md:text-[1.2rem] mb-4">
+            Package overview
+          </h2>
           <div className="md:flex flex-col justify-between md:h-[85vh]">
             <div>
               <div className="mb-8">
@@ -41,29 +61,41 @@ function RequestBooking() {
                     Change Date
                   </p>
                 </h3>
-                <div className="bg-[#F2F2F2] flex justify-between p-3 rounded-[10px] mb-2">
-                  <p className="">
-                    <span className="text-[0.75rem] block mb-[-0.2rem] font-light text-[#858585]">
-                      Start
-                    </span>
-                    Sat, 1 Mar, 2025
-                  </p>
-                  <p className="">
-                    <span className="text-[0.75rem] block mb-[-0.2rem] font-light text-[#858585]">
-                      End
-                    </span>
-                    Sat, 1 Mar, 2025
-                  </p>
-                </div>
+                {selectedDateData && (
+                  <div className="bg-[#F2F2F2] flex justify-between p-3 rounded-[10px] mb-2">
+                    <p className="">
+                      <span className="text-[0.75rem] block mb-[-0.2rem] font-light text-[#858585]">
+                        Start
+                      </span>
+                      {selectedDateData.startDay.substring(0, 3)},{" "}
+                      {selectedDateData.startDate}
+                    </p>
+                    <p className="">
+                      <span className="text-[0.75rem] block mb-[-0.2rem] font-light text-[#858585]">
+                        End
+                      </span>
+                      {selectedDateData.endDay.substring(0, 3)},{" "}
+                      {selectedDateData.endDate}
+                    </p>
+                  </div>
+                )}
               </div>
               <div className="mb-8">
-                <h3 className="text-[#3C3C3C] text-[0.9rem] md:text-[1rem]  mb-2">Angler Spaces</h3>
-                <div className="mb-2 relative border-[1.5px] border-[#005EE6] rounded-[12px] flex items-center justify-center text-[1.2rem] md:w-[55%] h-[3rem]">
-                  2
-                  <button className="absolute left-[0.2rem]  text-white bg-black w-[2.5rem] h-[2.5rem] rounded-[10px]">
+                <h3 className="text-[#3C3C3C] text-[0.9rem] md:text-[1rem]  mb-2">
+                  Angler Spaces
+                </h3>
+                <div className="mb-2 relative  bg-[#F2F2F2]   rounded-[12px] flex items-center justify-center text-[1.2rem] md:w-[55%] h-[3rem]">
+                  {anglerSpaces1}
+                  <button
+                    onClick={handleDecrement}
+                    className="absolute left-[0.2rem]  text-white bg-[#005EE6] w-[2.5rem] h-[2.5rem] rounded-[10px]"
+                  >
                     -
                   </button>
-                  <button className="absolute right-[0.2rem] text-white bg-black w-[2.5rem] h-[2.5rem] rounded-[10px]">
+                  <button
+                    onClick={handleIncrement}
+                    className="absolute right-[0.2rem] text-white bg-[#005EE6] w-[2.5rem] h-[2.5rem] rounded-[10px]"
+                  >
                     +
                   </button>
                 </div>
@@ -75,22 +107,18 @@ function RequestBooking() {
                     Change selection
                   </p>
                 </h3>
-                <div className="mb-2 flex flex-wrap gap-3 text-[0.9rem]">
-                  <div className="bg-[#F2F2F2] py-1 px-4 rounded-[40px]">
-                    Experience Local Culture
+                {selectedAddons && (
+                  <div className="mb-2 flex flex-col gap-2 text-[0.85rem]">
+                    {selectedAddons.map((data) => (
+                      <div className="">{data.title}</div>
+                    ))}
                   </div>
-                  <div className="bg-[#F2F2F2] py-1 px-4 rounded-[40px]">
-                    Explore Vibrant Delhi
-                  </div>
-                  <div className="bg-[#F2F2F2] py-1 px-4 rounded-[40px]">
-                    Witness the Marvelous Taj Mahal
-                  </div>
-                </div>
+                )}
               </div>
             </div>
             <div className="">
               <button className="bg-[#005EE6] hidden md:block text-white p-4 rounded-[10px] w-full mt-8">
-                Reserve
+              Request to Book
               </button>
               <p className="text-[#696969]  text-[0.85rem] text-center font-light mt-4">
                 You won’t be charged yet
@@ -196,12 +224,11 @@ function RequestBooking() {
           </div>
         </div>
         <div className="md:hidden">
-        <button className="bg-[#005EE6]  text-white p-4 rounded-[10px] w-full mb-[4rem] mt-8">
-          Reserve
-        </button>
+          <button className="bg-[#005EE6]  text-white p-4 rounded-[10px] w-full mb-[4rem] mt-8">
+            Request to Book
+          </button>
+        </div>
       </div>
-      </div>
-   
     </div>
   );
 }

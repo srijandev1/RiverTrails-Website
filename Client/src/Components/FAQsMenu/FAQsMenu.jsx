@@ -14,7 +14,7 @@ function FAQsMenu(props) {
         onClick={() => setMenuOpen(!menuOpen)}
         className="flex justify-between items-center w-full"
       >
-        <span className="py-4 text-left flex gap-3 items-center text-[0.9rem] md:text-[1rem]"><FaQ size={20} color="#005EE6"/>
+        <span className="py-4 text-left flex gap-3 items-center text-[0.9rem] md:text-[1rem]"><FaQ size={20} color={menuOpen ? "#FFFFFF" : "#005EE6"}/>
         {props.q}</span>
         {menuOpen ? <span>-</span> : <span>+</span>}
       </button>

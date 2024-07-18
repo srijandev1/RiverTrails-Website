@@ -9,6 +9,7 @@ import FAQs from './Pages/FAQs/FAQs';
 import Itinerary from './Pages/Itinerary/Itinerary';
 import Gallery from './Pages/Gallery/Gallery';
 import RequestBooking from './Pages/RequestBooking/RequestBooking';
+import ContactUs from './Pages/ContactUs/ContactUs';
 
 
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
           <Route path='/faq' element={<FAQs/>} />
           <Route path='/gallery' element={<Gallery/>} />
           <Route path='/requestbooking' element={<RequestBooking/>} />
+          <Route path='/contactus' element={<ContactUs/>} />
         </Route>
 
   )

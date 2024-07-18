@@ -2,7 +2,7 @@ import React from "react";
 import footer from "../../assets/footer.svg";
 import boat from "../../assets/boat.svg";
 import { logoW, fb, whatsapp, insta } from "../../assets/index";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -25,10 +25,10 @@ function Footer() {
                 Kumaon, Uttarakhand <br /> (Northern India)
               </p>
               <div className="flex gap-[1.1rem] mt-[1rem]">
-                <a href="#">
+                <a href="https://www.instagram.com/river__trails/">
                   <img className="w-[1.5rem]" src={insta} alt="" />
                 </a>
-                <a href="#">
+                <a href="https://www.facebook.com/p/River-Trails-India-100090244353944/">
                   <img className="w-[1.5rem]" src={fb} alt="" />
                 </a>
                 <a href="#">
@@ -39,11 +39,49 @@ function Footer() {
           </div>
           <div className="flex flex-col items-center md:items-start">
             <h4 className="mb-3 font-medium">Quick Links</h4>
-            <div className="flex flex-col items-center md:items-start gap-1 md:gap-3">
-              <Link className="font-extralight" to='/'>Home</Link>
-              <Link className="font-extralight" to='/aboutus'>About Us</Link>
-              <Link className="font-extralight" to='/faq'>FAQs</Link>
-              <Link className="font-extralight" to='/packages'>Packages</Link>
+            <div className="flex flex-col items-center md:items-start gap-1 md:gap-2">
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="font-extralight"
+                to="/"
+              >
+                Home
+              </Link>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="font-extralight"
+                to="/aboutus"
+              >
+                About Us
+              </Link>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="font-extralight"
+                to="/faq"
+              >
+                FAQs
+              </Link>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="font-extralight"
+                to="/packages"
+              >
+                Packages
+              </Link>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="font-extralight"
+                to="/gallery"
+              >
+                Gallery
+              </Link>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                className="font-extralight"
+                to="/contactus"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
           <div>
@@ -68,14 +106,14 @@ function Footer() {
               </button>
             </form>
           </div>
-
         </div>
 
         <div className="border-t-[0.5px] border-[#ffffff21] pt-[2rem]">
-          <p className="text-center text-[0.85rem] font-thin">© Copyright River Trails. All right reserved</p>
+          <p className="text-center text-[0.85rem] font-thin">
+            © Copyright River Trails. All right reserved
+          </p>
         </div>
       </div>
-
     </div>
   );
 }

@@ -41,10 +41,10 @@ function Gallery() {
   }, [currentIndex]);
 
   return (
-    <div className="w-[100vw] h-[100vh] flex items-center justify-center bg-black px-4 relative group">
-      <div className="absolute top-4 flex justify-between w-[100vw] px-4 items-center mb-9">
+    <div className="w-[100vw] h-[100vh] flex items-center justify-center bg-black  relative group">
+      <div className="absolute top-4 flex justify-between w-[100vw] px-4  items-center mb-9">
         {/* <p className="text-[#005EE6] font-medium text-[0.85rem]">GALLERY</p> */}
-        <h2 className="text-[white] flex items-center gap-3  text-center md:text-left text-[1.75rem] leading-8 md:text-[1.5rem] font-normal ">
+        <h2 className="text-[white]  flex items-center gap-3  text-center md:text-left text-[0.9rem] leading-8 md:text-[1.5rem] font-normal ">
           <GrGallery />
           River Rails’s Gallery
         </h2>
@@ -61,17 +61,17 @@ function Gallery() {
       </div>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
-        className={`w-[100vw] h-[80vh] bg-center bg-cover`}
+        className={`w-[100vw] h-[12rem] md:h-[80vh] bg-center bg-cover`}
       />
       {/* Left arrow */}
       <div
-        className="absolute top-[40%] md:top-[50%] left-2 md:left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer hover:bg-black/50" // Add hover effect
+        className="absolute top-[45%] md:top-[50%] left-2 md:left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer hover:bg-black/50" // Add hover effect
       >
         <MdKeyboardArrowLeft onClick={prevSlide} size={55} />
       </div>
       {/* Right arrow */}
       <div
-        className="absolute top-[40%] md:top-[50%] right-2 md:right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer hover:bg-black/50" // Add hover effect
+        className="absolute top-[45%] md:top-[50%] right-2 md:right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer hover:bg-black/50" // Add hover effect
       >
         <MdKeyboardArrowRight onClick={nextSlide} size={55} />
       </div>

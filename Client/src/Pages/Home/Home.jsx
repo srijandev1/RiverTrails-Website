@@ -9,6 +9,7 @@ import {
   whatsapp,
   fb,
   insta,
+  instaB, fbB, whatsappB,
   landing,
   about,
   p1,
@@ -41,7 +42,6 @@ function Home() {
   let cardContainer = useRef(null);
   const prev1 = () => (cardContainer.current.scrollLeft -= 715);
   const next1 = () => (cardContainer.current.scrollLeft += 715);
- 
 
   const [nav, setNav] = useState(true);
   const handleNav = () => {
@@ -142,16 +142,29 @@ function Home() {
         <header className="flex items-center justify-between">
           <img className="w-[5rem] md:w-[6rem]" src={logoW} alt="" />
           <nav className="hidden md:flex text-white gap-[4rem] items-center">
-            <Link onClick={() => window.scrollTo(0, 0)} to="/">Home</Link>
-            <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">About Us</Link>
-            <Link onClick={() => window.scrollTo(0, 0)} to="/packages">Packages</Link>
-            <Link onClick={() => window.scrollTo(0, 0)} to="/faq">FAQs</Link>
-            <Link onClick={() => window.scrollTo(0, 0)} to="/gallery">Gallery</Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/">
+              Home
+            </Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">
+              About Us
+            </Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/packages">
+              Packages
+            </Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/faq">
+              FAQs
+            </Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/gallery">
+              Gallery
+            </Link>
+            <Link onClick={() => window.scrollTo(0, 0)} to="/contactus">
+              Contact Us
+            </Link>
             <div className="flex gap-[1.5rem]">
-              <a href="#">
+              <a href="https://www.instagram.com/river__trails/">
                 <img className="w-[1.5rem]" src={insta} alt="" />
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/p/River-Trails-India-100090244353944/">
                 <img className="w-[1.5rem]" src={fb} alt="" />
               </a>
               <a href="#">
@@ -175,19 +188,33 @@ function Home() {
           >
             <img className="w-[7rem]" src={logoB} alt="" />
             <div className="flex flex-col gap-6 pl-3 pt-4">
-              <Link onClick={() => window.scrollTo(0, 0)} to="/">Home</Link>
-              <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">About Us</Link>
-              <Link onClick={() => window.scrollTo(0, 0)} to="/packages">Packages</Link>
-              <Link onClick={() => window.scrollTo(0, 0)} to="/faq">FAQs</Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/">
+                Home
+              </Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">
+                About Us
+              </Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/packages">
+                Packages
+              </Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/faq">
+                FAQs
+              </Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/gallery">
+                Gallery
+              </Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/contactus">
+                Contact Us
+              </Link>
               <div className="flex gap-[1rem]">
-                <a href="#">
-                  <img className="w-[1.5rem]" src={insta} alt="" />
+                <a href="https://www.instagram.com/river__trails/">
+                  <img className="w-[1.5rem]" src={instaB} alt="" />
+                </a>
+                <a href="https://www.facebook.com/p/River-Trails-India-100090244353944/">
+                  <img className="w-[1.5rem]" src={fbB} alt="" />
                 </a>
                 <a href="#">
-                  <img className="w-[1.5rem]" src={fb} alt="" />
-                </a>
-                <a href="#">
-                  <img className="w-[1.5rem]" src={whatsapp} alt="" />
+                  <img className="w-[1.5rem]" src={whatsappB} alt="" />
                 </a>
               </div>
             </div>
@@ -239,7 +266,7 @@ function Home() {
             What this place offers
           </h2>
         </div>
-     
+
         <div className="flex flex-wrap justify-center gap-4 md:gap-7">
           {UspData.map((usp, index) => (
             <UspCard
@@ -278,7 +305,9 @@ function Home() {
             on these very waters, River Trails embodies the spirit of adventure
             and the pursuit of a legendary catch.
             <span className="text-[#005EE6] block mt-2 text-[0.85rem]">
-              <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">Learn More {" ->"}</Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">
+                Learn More {" ->"}
+              </Link>
             </span>
           </p>
         </div>
@@ -398,12 +427,16 @@ function Home() {
             </div>
             <div className="w-[14rem] h-[7rem] relative md:h-[14.5rem] rounded-[5px] md:rounded-[10px] overflow-hidden ">
               <Link to="/gallery">
-              <div className="absolute backdrop-blur-sm bg-[#ffffff13] w-full md:w-[14rem] h-[7rem] md:h-[14.5rem] text-white flex flex-col items-center justify-center duration-300 cursor-pointer hover:bg-[#ffffff1c]">
-                <p className="text-[2rem] md:text-[2.3rem] mb-[-0.85rem] md:mb-[-1rem]">10 +</p>
-                <p className="text-[1.3rem] md:text-[1.5rem] font-extralight">more</p>
-              </div>
+                <div className="absolute backdrop-blur-sm bg-[#ffffff13] w-full md:w-[14rem] h-[7rem] md:h-[14.5rem] text-white flex flex-col items-center justify-center duration-300 cursor-pointer hover:bg-[#ffffff1c]">
+                  <p className="text-[2rem] md:text-[2.3rem] mb-[-0.85rem] md:mb-[-1rem]">
+                    10 +
+                  </p>
+                  <p className="text-[1.3rem] md:text-[1.5rem] font-extralight">
+                    more
+                  </p>
+                </div>
               </Link>
-            
+
               <img
                 className="w-full h-full object-cover duration-500 hover:scale-110"
                 src={p2}
