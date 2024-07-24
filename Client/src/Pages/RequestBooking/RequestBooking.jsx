@@ -120,7 +120,7 @@ function RequestBooking() {
               <button className="bg-[#005EE6] hidden md:block text-white p-4 rounded-[10px] w-full mt-8">
               Request to Book
               </button>
-              <p className="text-[#696969]  text-[0.85rem] text-center font-light mt-4">
+              <p className="text-[#696969] hidden md:block  text-[0.85rem] text-center font-light mt-4">
                 You won’t be charged yet
               </p>
             </div>
@@ -224,9 +224,12 @@ function RequestBooking() {
           </div>
         </div>
         <div className="md:hidden">
-          <button className="bg-[#005EE6]  text-white p-4 rounded-[10px] w-full mb-[4rem] mt-8">
+          <button className="bg-[#005EE6]  text-white p-4 rounded-[10px] w-full  mt-8">
             Request to Book
           </button>
+          <p className="text-[#696969] text-[0.85rem] text-center font-light mt-4 mb-[4rem]">
+                You won’t be charged yet
+              </p>
         </div>
       </div>
     </div>

@@ -222,20 +222,20 @@ function Home() {
         </header>
         <section className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between pt-[8rem] md:pt-[4rem]">
           <div className="text-center md:text-left">
-            <h1 className="text-white text-[4.4rem] md:text-[7rem] font-bold mt-0 md:mt-[4rem] relative">
+            <h1 className="text-white text-[20vw] md:text-[7rem] font-bold mt-0 md:mt-[4rem] relative">
               Ultimate{" "}
               <img
-                className="absolute w-[7rem] md:w-[10rem] top-[-3.5rem] left-1 md:top-[-4.5rem] md:left-3"
+                className="absolute w-[33vw] md:w-[10rem] top-[-8vh] left-[2vw] md:top-[-4.5rem] md:left-3"
                 src={tackle}
                 alt=""
               />
               <img
-                className="absolute w-[3rem] md:w-[5rem] right-[-1rem] top-4 md:right-[11.5rem] md:top-6"
+                className="absolute w-[3rem] md:w-[5rem] right-[-4vw] top-[2vh] md:right-[11.5rem] md:top-6"
                 src={shape}
                 alt=""
               />
             </h1>
-            <h1 className="text-[2.2rem] md:text-[5rem] font-extralight text-white leading-3 md:leading-7">
+            <h1 className="text-[10vw] md:text-[5rem] font-extralight text-white leading-3 md:leading-7">
               Fishing Experience
             </h1>
             <p className="text-[#DADADA]  font-light w-[full] md:w-[40rem] text-justify mt-[4rem] md:mt-[4rem] text-[0.85rem] md:text-[0.95rem]">
