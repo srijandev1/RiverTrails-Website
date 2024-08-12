@@ -9,7 +9,9 @@ import {
   whatsapp,
   fb,
   insta,
-  instaB, fbB, whatsappB,
+  instaB,
+  fbB,
+  whatsappB,
   landing,
   about,
   p1,
@@ -115,16 +117,16 @@ function Home() {
         {/* left arrow */}
         <div
           onClick={nextSlide}
-          className="hidden md:block absolute top-[40%] md:top-[50%] left-2 md:left-1 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
+          className="hidden md:block absolute top-[40%] md:top-[50%] left-2 md:left-8 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
         >
-          <MdKeyboardArrowLeft size={35} />
+          <MdKeyboardArrowLeft size={40} />
         </div>
         {/* right arrow */}
         <div
           onClick={nextSlide}
-          className="hidden md:block absolute top-[40%] md:top-[50%] right-2 md:right-1 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
+          className="hidden md:block absolute top-[40%] md:top-[50%] right-2 md:right-8 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer"
         >
-          <MdKeyboardArrowRight size={35} />
+          <MdKeyboardArrowRight size={40} />
         </div>
         <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2  md:bottom-0 justify-center py-2">
           {slides.map((slide, slideIndex) => (
@@ -221,24 +223,27 @@ function Home() {
           </nav>
         </header>
         <section className="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between pt-[8rem] md:pt-[4rem]">
-          <div className="text-center md:text-left">
-            <h1 className="text-white text-[20vw] md:text-[7rem] font-bold mt-0 md:mt-[4rem] relative">
-              Ultimate{" "}
-              <img
-                className="absolute w-[33vw] md:w-[10rem] top-[-8vh] left-[2vw] md:top-[-4.5rem] md:left-3"
-                src={tackle}
-                alt=""
-              />
-              <img
-                className="absolute w-[3rem] md:w-[5rem] right-[-4vw] top-[2vh] md:right-[11.5rem] md:top-6"
-                src={shape}
-                alt=""
-              />
-            </h1>
-            <h1 className="text-[10vw] md:text-[5rem] font-extralight text-white leading-3 md:leading-7">
-              Fishing Experience
-            </h1>
-            <p className="text-[#DADADA]  font-light w-[full] md:w-[40rem] text-justify mt-[4rem] md:mt-[4rem] text-[0.85rem] md:text-[0.95rem]">
+          <div className="text-center md:text-left w-full flex flex-col items-center">
+            <div className="flex flex-col md:mt-8 items-center">
+              <h1 className="text-white text-[20vw] md:text-[8rem] font-bold  relative">
+                Ultimate{" "}
+                <img
+                  className="absolute w-[33vw] md:w-[10rem] top-[-8vh] left-[2vw] md:top-[-4.5rem] md:left-3"
+                  src={tackle}
+                  alt=""
+                />
+                <img
+                  className="absolute w-[3rem] md:w-[5rem] right-[-4vw] top-[2vh] md:right-[-2rem] md:top-6"
+                  src={shape}
+                  alt=""
+                />
+              </h1>
+              <h1 className="text-[10vw] md:text-[5rem] font-extralight text-white md:mt-[-2.5rem]">
+                Fishing Experience
+              </h1>
+            </div>
+
+            <p className="text-[#DADADA] text-center font-light  md:w-[40rem] mt-[4rem] md:mt-[3rem] text-[0.85rem] md:text-[0.95rem]">
               This fishing journey requires driving on Himalayan switch back
               roads for long hours, fishing and hiking to get to the best waters
               in high temperatures that are ideal for Golden Mahseer fishing.
@@ -251,7 +256,7 @@ function Home() {
           </div>
           <div className="">
             <img
-              className="hidden md:block w-[17rem] md:w-[35rem]"
+              className="hidden md:hidden w-[17rem] md:w-[35rem]"
               src={landing}
               alt=""
             />
@@ -306,7 +311,7 @@ function Home() {
             and the pursuit of a legendary catch.
             <span className="text-[#005EE6] block mt-2 text-[0.85rem]">
               <Link onClick={() => window.scrollTo(0, 0)} to="/aboutus">
-                Learn More {" ->"}
+                See more
               </Link>
             </span>
           </p>
@@ -456,16 +461,11 @@ function Home() {
         </div>
 
         <div className="flex items-center justify-center">
-          <div className="w-[90vw] md:w-[45rem] flex justify-around items-center">
-            <button
-              onClick={prev1}
-              className="hidden md:block cursor-pointer text-[2rem]"
-            >
-              {"<"}
-            </button>
+          <div className=" flex justify-around items-center">
+        
             <div
-              className="flex  items-center overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar"
-              ref={cardContainer}
+              className="flex items-center overflow-x-auto scroll-smooth hide-scrollbar"
+              
             >
               {ReviewData.map((data) => {
                 return (
@@ -479,12 +479,7 @@ function Home() {
                 );
               })}
             </div>
-            <button
-              onClick={next1}
-              className="hidden md:block cursor-pointer text-[2rem]"
-            >
-              {">"}
-            </button>
+        
           </div>
         </div>
       </section>
