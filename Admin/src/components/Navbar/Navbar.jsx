@@ -11,25 +11,25 @@ function Navbar() {
     <div>
       <img className="mb-10" src={logoB} alt="" />
       <div className="flex flex-col gap-7">
-        <div className="flex items-center gap-2 text-[#5e5e5e]">
+        <div className="flex items-center gap-2 text-[#5e5e5e] hover:text-[black] cursor-pointer duration-200">
           <FaCalendarCheck size={22} />
           Booking
         </div>
-        <div className="flex items-center gap-2 text-[#5e5e5e]">
+        <div className="flex items-center gap-2 text-[#5e5e5e] hover:text-[black] cursor-pointer duration-200">
           <BiSolidCustomize size={23} />
           Packages
         </div>
-        <div className="flex items-center gap-2 text-[#5e5e5e]">
+        <div className="flex items-center gap-2 text-[#5e5e5e] hover:text-[black] cursor-pointer duration-200">
           <FaImage size={22} />
           Content
         </div>
-        <div className="flex items-center gap-2 text-[#5e5e5e]">
+        <div className="flex items-center gap-2 text-[#5e5e5e] hover:text-[black] cursor-pointer duration-200">
           <IoMdSettings size={22} />
           Settings
         </div>
       </div>
     </div>
-    <div className="flex items-center gap-2 text-[#5e5e5e]">
+    <div className="flex items-center gap-2 text-[#5e5e5e] hover:text-[black] cursor-pointer duration-200">
       <IoLogOut size={30} />
       Log Out
     </div>
