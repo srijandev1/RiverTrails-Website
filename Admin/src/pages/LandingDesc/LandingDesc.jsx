@@ -15,8 +15,9 @@ function LandingDesc() {
           Landing Desc</h1>
 
         </div>
-        <div className='p-8'>
-            <textarea className='w-[40rem]' name="" id=""></textarea>
+        <div className='p-8 flex flex-col gap-4'>
+            <textarea className='w-[50rem] border-[black] rounded-[5px] border-[2px] h-[10rem] p-4' placeholder='Enter you content here...' name="" id=""></textarea>
+            <button className='bg-[#005EE6] text-white rounded-[10px] w-[8rem] py-2'>Save</button>
         </div>
         </section>
     </div>
