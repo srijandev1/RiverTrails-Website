@@ -24,7 +24,7 @@ function FAQsMenu(props) {
           {props.a}
         </div>
       </div>
-      <div className={`${  menuOpen ? " text-black" : " bg-white"} rounded-[10px] shadow-md bg-[white] hover:bg-[#00000030] absolute right-[-3rem] cursor-pointer top-0 duration-200 p-2`}> <MdDelete size={25}/></div>
+      <div onClick={props.onDelete} className={`${  menuOpen ? " text-black" : " bg-white"} rounded-[10px] shadow-md bg-[white] hover:bg-[#000000] hover:text-white absolute right-[-4rem] cursor-pointer top-0 duration-200 p-4`}> <MdDelete size={25}/></div>
     </div>
   );
 }

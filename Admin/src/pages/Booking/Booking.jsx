@@ -2,7 +2,7 @@ import React from 'react'
 
 function Booking() {
   return (
-    <div>Booking</div>
+    <section className='py-8 w-full h-screen'>Booking</section>
   )
 }
 

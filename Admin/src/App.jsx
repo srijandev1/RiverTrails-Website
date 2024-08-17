@@ -10,7 +10,7 @@ import AddFaqs from "./pages/AddFaqs/AddFaqs";
 function App() {
   return (
     <>
-     <Package/>
+     <Content/>
     </>
   );
 }

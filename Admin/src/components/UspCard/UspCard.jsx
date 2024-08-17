@@ -1,7 +1,7 @@
 import React from "react";
 import { MdDelete } from "react-icons/md";
 
-function UspCard({ icon, title, onClick }) {
+function UspCard({ icon, title, onClick, onDelete }) {
   return (
     <div className="flex items-center gap-1">
       <div  
@@ -11,7 +11,7 @@ function UspCard({ icon, title, onClick }) {
       <p className="text-center">{title}</p>
       </div>
      
-      <div className=" rounded-[10px] shadow-md bg-[white] hover:bg-[#00000030] cursor-pointer duration-200 p-2"> <MdDelete size={25}/></div>
+      <div onClick={onDelete} className=" rounded-[10px] shadow-md bg-[white]  hover:bg-[black] hover:text-[white]  cursor-pointer duration-200 p-2"> <MdDelete size={25}/></div>
     </div>
   );
 }

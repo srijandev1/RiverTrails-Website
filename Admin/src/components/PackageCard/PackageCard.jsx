@@ -26,7 +26,7 @@ function PackageCard(props) {
           </p>
         </div>
       </div>
-      <div className="absolute right-3 bottom-5">
+      <div onClick={props.onDelete} className="absolute right-3 bottom-3 rounded-[10px] shadow-md bg-[white] hover:bg-[black] hover:text-[white] cursor-pointer duration-200 p-2">
         <MdDelete size={25}/>
       </div>
     </div>
