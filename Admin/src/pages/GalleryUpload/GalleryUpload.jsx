@@ -5,12 +5,18 @@ import { FaPlus } from "react-icons/fa6";
 import { photos } from "./Photos";
 import { Link } from "react-router-dom";
 import Delete from "../../components/Delete/Delete";
+import GalleryP from "../../components/Popups/GalleryP/GalleryP";
 
 function GalleryUpload() {
   const [isDelete, setIsDelete] = useState(false);
   const toggleDelete = () => {
     setIsDelete(!isDelete);
   };
+  const [isOpen, setIsOpen] = useState(false);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <section className="py-8 w-full h-screen ">
       <div className="flex justify-between items-center px-8 mb-6">
@@ -20,7 +26,7 @@ function GalleryUpload() {
           </Link>
           Gallery Photos
         </h1>
-        <button className="text-white flex items-center gap-3 bg-[#005EE6] rounded-[10px] py-3 px-5">
+        <button onClick={togglePopup} className="text-white flex items-center gap-3 bg-[#005EE6] rounded-[10px] py-3 px-5">
           Add Photos <FaPlus size={22} />
         </button>
       </div>
@@ -42,6 +48,9 @@ function GalleryUpload() {
         ))}
       </div>
       {isDelete && <Delete onClose={toggleDelete} />}
+      {isOpen && (
+        <GalleryP onPopup={togglePopup}/>
+      )}
     </section>
   );
 }

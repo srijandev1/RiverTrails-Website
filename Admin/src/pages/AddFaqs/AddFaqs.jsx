@@ -6,11 +6,16 @@ import { faqs } from "./FAQs";
 import FAQsMenu from "../../components/FAQsMenu/FAQsMenu";
 import { Link } from "react-router-dom";
 import Delete from "../../components/Delete/Delete";
+import FaqsP from "../../components/Popups/FaqsP/FaqsP";
 
 function AddFaqs() {
   const [isDelete, setIsDelete] = useState(false);
   const toggleDelete = () => {
     setIsDelete(!isDelete);
+  };
+  const [isOpen, setIsOpen] = useState(false);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
   };
   return (
     <section className="py-8 w-full h-screen ">
@@ -21,7 +26,7 @@ function AddFaqs() {
           </Link>
           Add FAQs
         </h1>
-        <button className="text-white flex items-center gap-3 bg-[#005EE6] rounded-[10px] py-3 px-5">
+        <button onClick={togglePopup} className="text-white flex items-center gap-3 bg-[#005EE6] rounded-[10px] py-3 px-5">
           Add FAQs <FaPlus size={22} />
         </button>
       </div>
@@ -30,9 +35,12 @@ function AddFaqs() {
           return <FAQsMenu q={faq.ques} a={faq.ans} onDelete={toggleDelete} />;
         })}
       </div>
-      {isDelete && <Delete onClose={toggleDelete} />};
+      {isDelete && <Delete onClose={toggleDelete} />}
+      {isOpen && (
+        <FaqsP onPopup={togglePopup}/>
+      )}
     </section>
-  );
+  )
 }
 
 export default AddFaqs;

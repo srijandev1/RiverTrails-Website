@@ -36,6 +36,90 @@ export const PackageData = [
         days: 9
     },
     {
+        thumbnail: p3,
+        heading: 'Exploring Angler',
+        rating: 4.6,
+        nights: 9,
+        days: 11,
+    },
+    {
+        thumbnail: p4,
+        heading: 'Adventurous Angler',
+        rating: 4.8,
+        nights: 7,
+        days: 8,
+    },
+    {
+        thumbnail: p3,
+        heading: 'Time-Crunched Angler',
+        rating: 4.5,
+        nights: 8,
+        days: 9
+    },
+    {
+        thumbnail: p3,
+        heading: 'Exploring Angler',
+        rating: 4.6,
+        nights: 9,
+        days: 11,
+    },
+    {
+        thumbnail: p4,
+        heading: 'Adventurous Angler',
+        rating: 4.8,
+        nights: 7,
+        days: 8,
+    },
+    {
+        thumbnail: p3,
+        heading: 'Time-Crunched Angler',
+        rating: 4.5,
+        nights: 8,
+        days: 9
+    },
+    {
+        thumbnail: p3,
+        heading: 'Exploring Angler',
+        rating: 4.6,
+        nights: 9,
+        days: 11,
+    },
+    {
+        thumbnail: p4,
+        heading: 'Adventurous Angler',
+        rating: 4.8,
+        nights: 7,
+        days: 8,
+    },
+    {
+        thumbnail: p3,
+        heading: 'Time-Crunched Angler',
+        rating: 4.5,
+        nights: 8,
+        days: 9
+    },
+    {
+        thumbnail: p3,
+        heading: 'Exploring Angler',
+        rating: 4.6,
+        nights: 9,
+        days: 11,
+    },
+    {
+        thumbnail: p4,
+        heading: 'Adventurous Angler',
+        rating: 4.8,
+        nights: 7,
+        days: 8,
+    },
+    {
+        thumbnail: p3,
+        heading: 'Time-Crunched Angler',
+        rating: 4.5,
+        nights: 8,
+        days: 9
+    },
+    {
         thumbnail: p4,
         heading: 'Easy Going Angler',
         rating: 4.2,

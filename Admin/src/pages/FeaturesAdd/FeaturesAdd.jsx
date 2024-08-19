@@ -6,11 +6,16 @@ import UspPopup from "../../components/UspPopup/UspPopup";
 import { FaPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import Delete from "../../components/Delete/Delete";
+import FeaturesP from "../../components/Popups/FeaturesP/FeaturesP";
 
 function FeaturesAdd() {
   const [isDelete, setIsDelete] = useState(false);
   const toggleDelete = () => {
     setIsDelete(!isDelete);
+  };
+  const [isOpen, setIsOpen] = useState(false);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
   };
 
   const [popupData, setPopupData] = useState(null);
@@ -43,7 +48,7 @@ function FeaturesAdd() {
           </Link>
           Add Features
         </h1>
-        <button className="text-white flex items-center gap-3 bg-[#005EE6] rounded-[10px] py-3 px-5">
+        <button onClick={togglePopup} className="text-white flex items-center gap-3 bg-[#005EE6] rounded-[10px] py-3 px-5">
           Add Features <FaPlus size={22} />
         </button>
       </div>
@@ -70,6 +75,9 @@ function FeaturesAdd() {
       </div>
       {isDelete && (
         <Delete onClose={toggleDelete}/>
+      )}
+      {isOpen && (
+        <FeaturesP onPopup={togglePopup}/>
       )}
     </section>
   );

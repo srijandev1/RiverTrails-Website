@@ -23,12 +23,12 @@ function Package() {
         <h1 className="font-semibold text-[3rem] text-[#3C3C3C]">Package</h1>
         <button
           onClick={togglePopup}
-          className="text-white flex items-center gap-3 bg-[#005EE6] rounded-[10px] py-3 px-5"
+          className="text-white flex items-center gap-3 bg-[#005EE6] cursor-pointer rounded-[10px] py-3 px-5"
         >
           Add Packages <FaPlus size={22} />
         </button>
       </div>
-      <div className="grid grid-cols-4 gap-x-8 h-[80vh] py-4 px-8 overflow-auto">
+      <div className="grid grid-cols-4 gap-8 h-[80vh] py-4 px-8 overflow-auto">
         {PackageData.map((data) => (
           <PackageCard
             img={data.thumbnail}
